@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Page</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.0/examples/carousel/"
+    />
+    <!--thuộc tính rel:canonical chỉ đích danh URL để ko bị nhầm -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+      integrity="sha3840evHe/X+R7YkIZDRvuzKMRqM+0rBnVFBL6D0itfPri4tjfHxaWutUpFmBp4vmVor"
+    />
+    <!-- Thuộc tính Integrity là cho phép trình duyệt kiểm tra nguồn tệp để đảm bảo rằng mã không bao giờ được tải nếu nguồn đã bị thao túng.
+Thuộc tính Crossorigin xuất hiện khi một yêu cầu được tải bằng cách sử dụng 'CORS', hiện là một yêu cầu kiểm tra SRI khi không được tải từ 'cùng một nguồn gốc'. -->
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+      integrity="sha384pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    ></script>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <!-- navbar-expand-md: hiển thị button menu cho màn hình collapse on sm widths <768px -->
+        <!-- Chọn cho Navbar loại sáng hay tối với navbar-light và navbar-dark. Cơ phiên bản nó sẽ thiết lập màu chữ, link những thành phần trên Navbar sao cho nhìn rõ trên loại sáng, tối -->
+        <!-- fixed-top: được sử dụng để cố định một phần tử lên phía trên khung nhìn (viewport) của trình duyệt -->
+        <!-- bg-dark: màu nền đen -->
+        <div class="container-fluid">
+          <a href="#" class="navbar-brand">Carousel</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!--Để điều khiển nội dung có thể thu gọn (hiện/ẩn), thêm thuộc tính data-bs-toggle="collapse" vào thanh phần <a> hoặc <button>. Sau đó, thêm data-bs-target="#id" để kết nối nút bấm đó với nội dung có thể thu gọn -->
+            <!--aria trường hợp này giúp hỗ trợ điều hướng chính xác trang-->
+            <span class="navbar-toggler-icon"></span></button
+          ><!--button này xuất hiện khi viewport <768px-->
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <!-- me-auto: thêm margin phải-đẩy nội dung về bên trái, margin bottom: 2rem=16px *2 -->
+              <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link disabled"
+                  aria-disabled="true"
+                  tabindex="-1"
+                  >Disabled</a
+                ><!--tabindex là để chỉ tự khi bấm tab đến, ở đây âm tức ko trỏ tới-->
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                type="search"
+                class="form-control me-2"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+              <!--btn-outline-success là 1 lớp tạo kiểu dáng cho nút button đã có sẵn trên bootstrap-->
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Xây dựng thành phần Carousel -->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!--Phần chứa toàn bộ nội dung; thuộc tính data-ride=”carousel” nhằm kích hoạt hiệu ứng hoạt hình sẽ lập tức hoạt động khi trang được tải-->
+      <div class="carousel-inner">
+        <div class="carousel-item active bg-img1">
+          <!-- có 2 cách thêm background: 1 là thẻ img trực tiếp như dòng dưới; 2 là thêm lớp-css đã tạo ảnh nền vào lớp carousel-item, trong lớp ko có nội dung cần quy định thêm chiều cao bắt buộc để ảnh nền được hiện ra -->
+          <!-- <img src="./anh1.jpg" class="d-block w-100" alt="Ảnh 1" /> -->
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Example headline</h1>
+              <p>
+                Some representative placeholder content for the first slide of
+                the carousel.
+              </p>
+              <p>
+                <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item bg-img2">
+          <!-- <img src="./anh2.jpg" class="d-block w-100" alt="Ảnh 2" /> -->
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline</h1>
+              <p>
+                Some representative placeholder content for the second slide of
+                the carousel.
+              </p>
+              <p>
+                <a href="#" class="btn btn-lg btn-primary">Learn more</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item bg-img3">
+          <!-- <img src="./anh3.jpg" class="d-block w-100" alt="Ảnh 3" /> -->
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>One more for good measure</h1>
+              <p>
+                Some representative placeholder content for the third slide of
+                the carousel.
+              </p>
+              <p>
+                <a href="#" class="btn btn-lg btn-primary">Browse gallery</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Khối thể hiện vị trí item đang hoạt động -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          aria-label="Slide 1"
+          class="active"
+          aria-current="true"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <!-- khối điều khiển với 2 button next, prev -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- phần chân trang -->
+    <footer class="d-flex justify-content-between fixed-bottom">
+      <div>
+        <span>© 2017 - 2021 Company, Inc.</span>
+        <a class="privacy" href="#">. Privacy</a>
+        <a class="term" href="#">. Terms</a>
+      </div>
+      <a class="btt" href="#">Back to top</a>
+    </footer>
+  </body>
+</html>

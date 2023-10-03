@@ -1,0 +1,21 @@
+.bg-img1 {
+  background-color: #000;
+  background-size: cover;
+  background-image: url(./anh1.jpg);
+  height: 683px;
+}
+.bg-img2 {
+  background-color: #000;
+  background-size: cover;
+  background-image: url(./anh2.jpg);
+  height: 683px;
+}
+.bg-img3 {
+  background-color: #000;
+  background-size: cover;
+  background-image: url(./anh3.jpg);
+  height: 683px;
+}
+footer {
+  padding: 0 100px 60px;
+}
